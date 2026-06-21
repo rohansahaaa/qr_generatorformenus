@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restaurant Menu QR Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">Free Online Tool</p>
+      <h1>Restaurant Menu QR Generator</h1>
+      <p class="subtitle">Create a digital restaurant menu and a real QR code that opens that menu.</p>
+    </div>
+
+    <a class="dh-button" href="https://digitalheroesco.com" target="_blank" rel="noopener">
+      Built for Digital Heroes
+    </a>
+  </header>
+
+  <main class="layout">
+    <section class="card form-card">
+      <h2>1. Feed your menu</h2>
+      <p class="muted">Add restaurant details and menu items. Keep the menu short for the QR to scan easily.</p>
+
+      <label>
+        Restaurant Name
+        <input id="restaurantName" type="text" placeholder="Example: Blue Bean Cafe" />
+      </label>
+
+      <label>
+        Short Description
+        <input id="restaurantDesc" type="text" placeholder="Example: Fresh coffee, snacks and comfort food" />
+      </label>
+
+      <label>
+        Location / Table Note
+        <input id="restaurantNote" type="text" placeholder="Example: Scan, choose, and order at counter" />
+      </label>
+
+      <div class="menu-builder">
+        <div class="menu-title-row">
+          <h3>Menu Items</h3>
+          <button id="addItemBtn" class="secondary" type="button">+ Add Item</button>
+        </div>
+
+        <div id="items"></div>
+      </div>
+
+      <button id="generateBtn" class="primary" type="button">Generate Working QR</button>
+      <p id="errorMsg" class="error"></p>
+      <p class="small-note">Important: For phone scanning, deploy this website on Vercel first, then generate the QR from the live Vercel link.</p>
+    </section>
+
+    <section class="card result-card">
+      <h2>2. Scan-ready QR</h2>
+      <p class="muted">This QR contains the menu page link. Scan it with your phone camera after deployment.</p>
+
+      <div id="qrBox" class="qr-box">
+        <p class="placeholder">Your QR code will appear here.</p>
+      </div>
+
+      <div class="result-actions">
+        <a id="openMenuLink" class="secondary disabled" href="#" target="_blank" rel="noopener">Test Menu Page</a>
+        <a id="downloadQrBtn" class="secondary disabled" href="#" download="restaurant-menu-qr.png">Download QR</a>
+      </div>
+
+      <label>
+        Menu Link inside QR
+        <input id="menuUrl" type="text" readonly placeholder="Generated menu link will appear here" />
+      </label>
+
+      <div class="mini-preview">
+        <h3>Live Preview</h3>
+        <div id="preview">
+          <p class="muted">Fill the form and generate to see your menu preview.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Rohan Saha</strong> | saharohan907@gmail.com</p>
+    <p>₹0 spent. Built with free tools and deployable on Vercel’s free Hobby plan.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
